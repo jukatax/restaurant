@@ -1,0 +1,389 @@
+h1, h2, h3, h4, h5, p {
+  margin-bottom: 0px;
+}
+
+h1.large {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 70.434px;
+  line-height: 56.826px;
+}
+
+h1.light {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 39.636px;
+  line-height: 39.636px;
+}
+
+h1 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 39.636px;
+  line-height: 39.636px;
+}
+
+h2 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 31.986px;
+  line-height: 31.986px;
+}
+
+h3 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 23.994px;
+  line-height: 31.992px;
+}
+
+h4 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16.74px;
+  line-height: 22.32px;
+  margin-bottom: 0px;
+}
+
+.sub, p.sub {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13.5px;
+  line-height: 18px;
+}
+
+b, .bold {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+body {
+  background: #F7F7F7;
+  font-family: Verdana , sans-serif;
+}
+
+body .orderSummary.myslide {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  height: 200px;
+}
+
+body .orderSummary.myslide.ng-hide {
+  height: 0;
+}
+
+body .orderSummary.myslide.ng-hide.ng-hide-add {
+  display: block !important;
+  height: 0;
+}
+
+body .orderSummary.myslide.ng-animate.ng-hide-animate.ng-hide-remove.ng-hide-remove-active {
+  display: block !important;
+  height: 200px;
+}
+
+body .slideLeft {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+body .slideLeft h3 {
+  font-size: 1.1em;
+  margin: 5px auto;
+}
+
+body .slideLeft span {
+  font-size: 0.9em;
+  margin: 5px auto;
+}
+
+body .slideLeft.ng-hide {
+  left: -299px;
+}
+
+body .slideLeft.ng-hide.ng-hide-add {
+  display: block !important;
+  left: -299px;
+}
+
+body .slideLeft.ng-hide-remove.ng-hide-remove-active {
+  display: block !important;
+  left: 10px;
+}
+
+body .header {
+  margin-top: 61px;
+  text-align: center;
+  color: #70747D;
+}
+
+body .header h1 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+body .basket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  padding: 5px;
+  background: #C83C3B;
+  color: #fff;
+}
+
+body .basket .orderSummary {
+  height: 200px;
+  overflow-y: auto;
+  margin-top: 65px;
+}
+
+body .basket .orderSummary .summaryTitles {
+  color: #950009;
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+body .basket .orderSummary ul {
+  list-style: none;
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #950009;
+  border-radius: 4px;
+}
+
+body .basket .orderSummary ul li {
+  display: block;
+  background: #D85050;
+  border-bottom: 1px solid #950009;
+}
+
+body .basket .orderSummary ul li .order {
+  float: left;
+  padding: 1%;
+}
+
+body .basket .orderSummary ul li .order.orderQuantity {
+  width: 5%;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 0;
+  background: #B94945;
+}
+
+body .basket .orderSummary ul li .order.orderQuantity .orderQuantity__addMeal, body .basket .orderSummary ul li .order.orderQuantity .orderQuantity__removeMeal {
+  color: #950009;
+}
+
+body .basket .orderSummary ul li .order.orderName {
+  width: 72%;
+  text-align: left;
+  margin: 12px 0 0 0;
+}
+
+body .basket .orderSummary ul li .order.orderPrice {
+  width: 17%;
+  text-align: center;
+  margin: 12px 0 0 0;
+}
+
+body .basket .orderSummary ul li::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+body .basket .initialMessage {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  padding: 5px 10px;
+  background: #D85050;
+  color: #fff;
+}
+
+body .basket .mealCount.confirmOrder {
+  float: left;
+  margin: 10px;
+}
+
+body .basket .mealCount.confirmOrder .count {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+}
+
+body .basket .mealCount.confirmOrder .count.mainCount, body .basket .mealCount.confirmOrder .count.otherCount {
+  float: left;
+  display: initial;
+  background: #D85050;
+  color: #950009;
+  width: auto;
+  margin: 0 5px 0 10px;
+  font-style: italic;
+}
+
+body .basket .mealCount.confirmOrder .count.placeOrder {
+  background: #fff;
+  color: #C83C3B;
+  padding: 5px 50px;
+  width: auto;
+  float: left;
+}
+
+body .basket .total {
+  float: right;
+  display: initial;
+  background: #D85050;
+  color: #fff;
+  width: auto;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+body .meals {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+body .meals::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+body .meals .meal {
+  display: block;
+  float: left;
+  width: 280px;
+  height: 325px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  background: #fff;
+  margin: 10px 2px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+body .meals .meal .price {
+  position: absolute;
+  top: 0;
+  left: 39%;
+  background: #456BF2;
+  color: #fff;
+  padding: 2px 10px;
+}
+
+body .meals .meal .image {
+  width: 100%;
+  height: 200px;
+}
+
+body .meals .meal .slideDesc {
+  background: none;
+  position: relative;
+  z-index: 1;
+  top: -55px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+body .meals .meal .slideDesc .name {
+  background-color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 3px 3px 0 0;
+  padding: 7px 0;
+  margin: 0;
+}
+
+body .meals .meal .slideDesc .tags {
+  background: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 0;
+  position: relative;
+}
+
+body .meals .meal .slideDesc .tags .tag {
+  background: none;
+  position: relative;
+  z-index: 2;
+}
+
+body .meals .meal .slideDesc .tags .curve {
+  width: 103%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  margin-left: -2%;
+}
+
+body .meals .meal .slideDesc .description {
+  background: #fff;
+  margin-top: 0;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #888;
+  line-height: 20px;
+}
+
+body .meals .meal .mealFooter {
+  background: #fff;
+  margin: 0;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 11px 0 30px 0;
+}
+
+body .meals .meal .mealFooter .showMore {
+  position: absolute;
+  top: -21px;
+  right: 25px;
+}
+
+body .meals .meal .mealFooter .addToOrder {
+  display: block;
+  width: 255px;
+  background: #456BF2;
+  color: #fff;
+  margin: 0 auto;
+  border: 1px solid #888;
+  padding: 5px 20px;
+  font-size: 16px;
+}
+
+@media all and (max-width: 640px) {
+  body .basket .initialMessage {
+    font-size: 14px;
+  }
+  body .basket .orderSummary ul li .order.orderQuantity {
+    width: 10%;
+  }
+  body .basket .orderSummary ul li .order.orderName {
+    width: 67%;
+  }
+  body .meals .meal {
+    float: left;
+    margin: 10px;
+  }
+}

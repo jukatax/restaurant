@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Yuliyan Yordanov">
+    <title>Restaurant mockup</title>
+    <meta name="description" content="Restaurant mockup">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body ng-app="restaurant">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div class="header">
+        <h1 class="text-muted">Your Delicious Restaurant</h1>
+      </div>
+
+      <div ng-view=""></div>
+
+      <div class="footer">
+
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="scripts/vendor/es5-shim/es5-shim.js"></script>
+    <script src="scripts/vendor/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="scripts/vendor/angular/angular.js"></script>
+    <script src="scripts/vendor/angular-animate/angular-animate.js"></script>
+    <script src="scripts/vendor/angular-cookies/angular-cookies.js"></script>
+    <script src="scripts/vendor/angular-resource/angular-resource.js"></script>
+    <script src="scripts/vendor/angular-route/angular-route.js"></script>
+    <script src="scripts/vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="scripts/vendor/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/basket.js"></script>
+        <script src="scripts/services/menuservice.js"></script>
+   <!--     <script src="scripts/vendor/socket.io-1.4.5.js"></script>-->
+        <!-- endbuild -->
+  <script>
+    //=======================================================================
+    //============================ Socket.io ================================
+    //=======================================================================
+  /*  var socket = io();
+    socket.on('doRefresh',function(){
+      window.location.reload(true);
+    });*/
+  </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+@import 'scales';
+@import 'typography';
+$body : #F7F7F7;
+$meal : #aaa;
+$basket : #C83C3B;
+$basketBorder : #950009;
+$basketItemBackground : #D85050;
+body{
+        background : $body;
+        font-family: Verdana , sans-serif;
+        //===================== animations =============================
+        //================== slide up-down the basket ==================
+        .orderSummary.myslide{
+                -webkit-transition:all 0.5s linear;
+                -moz-transition:all 0.5s linear;
+                transition:all 0.5s linear;
+                height : 200px;
+        }
+        .orderSummary.myslide.ng-hide{
+                height : 0;
+        }
+        .orderSummary.myslide.ng-hide.ng-hide-add{
+                display:block!important;
+                height : 0;
+        }
+        .orderSummary.myslide.ng-animate.ng-hide-animate.ng-hide-remove.ng-hide-remove-active {
+                display:block!important;
+                height : 200px;
+        }
+        //================== slide left-right the basket title ===========
+        .slideLeft{
+                position : absolute;
+                left : 10px;
+                top : 0;
+                -webkit-transition:all 0.5s linear;
+                -moz-transition:all 0.5s linear;
+                transition:all 0.5s linear;
+                h3{
+                        font-size : 1.1em;
+                        margin : 5px auto;
+                }
+                span{
+                        font-size : 0.9em;
+                        margin : 5px auto;
+                }
+        }
+        .slideLeft.ng-hide{
+                left : -299px;
+        }
+        .slideLeft.ng-hide.ng-hide-add{
+                display:block!important;
+                left : -299px;
+        }
+        .slideLeft.ng-hide-remove.ng-hide-remove-active {
+                display:block!important;
+                left : 10px;
+        }
+
+        //=================== rest of styles =============================
+        //header styles ===================
+        .header{
+                margin-top: 61px;
+                text-align: center;
+                color : #70747D;
+                h1{
+                        font-size : 20px;
+                        font-weight: normal;
+                }
+
+        }
+        //basket styles ===================
+        .basket{
+                position : fixed;
+                top : 0;
+                left : 0;
+                z-index: 3;
+                width : 100%;
+                padding : 5px;
+                background : $basket;
+                color : #fff;
+                .orderSummary{
+                        height : 200px;
+                        overflow-y : auto;
+                        margin-top : 65px;
+
+                        .summaryTitles{
+                                color : $basketBorder;
+                                font-style : italic;
+                                font-size : 12px;
+                                margin-left: 10px;
+                        }
+                        ul{
+                                list-style : none;
+                                display : block;
+                                width : 95%;
+                                margin : 0 auto;
+                                padding: 0;
+                                border : 1px solid $basketBorder;
+                                border-radius : 4px;
+                                li{
+                                        display : block;
+                                        background : $basketItemBackground;
+                                        border-bottom : 1px solid $basketBorder;
+                                        .order{
+                                                float : left;
+                                                padding : 1%;
+                                                &.orderQuantity{
+                                                        width : 5%;
+                                                        text-align : center;
+                                                        font-size: 12px;
+                                                        padding: 10px 0;
+                                                        background : #B94945;
+                                                        .orderQuantity__addMeal , .orderQuantity__removeMeal{
+                                                                color : $basketBorder;
+                                                        }
+                                                }
+                                                &.orderName{
+                                                        width:72%;
+                                                        text-align : left;
+                                                        margin : 12px 0 0 0;
+                                                }
+                                                &.orderPrice{
+                                                        width : 17%;
+                                                        text-align : center;
+                                                        margin : 12px 0 0 0;
+                                                }
+
+                                        }
+                                        &::after{
+                                                display : table;
+                                                content : '';
+                                                clear: both;
+                                        }
+                                }
+                        }
+                }
+                .initialMessage{
+                        display : block;
+                        width: 80%;
+                        margin : 10px auto;
+                        text-align : center;
+                        padding : 5px 10px;
+                        background : #D85050;
+                        color : #fff;
+                }
+                .mealCount.confirmOrder{
+                        float : left;
+                        margin: 10px;
+                        .count{
+                                display : block;
+                                width: 80%;
+                                margin : 0 auto;
+                                text-align : center;
+                                padding : 5px;
+                                &.mainCount , &.otherCount{
+                                        float : left;
+                                        display : initial;
+                                        background : #D85050;
+                                        color : #950009;
+                                        width: auto;
+                                        margin: 0 5px 0 10px;
+                                        font-style: italic;
+
+                                }
+                                &.placeOrder{
+                                        background : #fff;
+                                        color : $basket;
+                                        padding : 5px 50px;
+                                        width: auto;
+                                        float : left;
+                                }
+                        }
+
+
+                }
+                .total{
+                        float : right;
+                        display : initial;
+                        background : #D85050;
+                        color : #fff;
+                        width: auto;
+                        margin: 10px;
+                        text-align : center;
+                        padding : 5px;
+                }
+        }
+        //menu item styles ================
+        .meals{
+                list-style : none;
+                padding : 0;
+                margin : 0 auto;
+                &::after{
+                        display : table;
+                        clear : both;
+                        content : '';
+                }
+                .meal{
+                        display : block;
+                        float : left;
+                        width : 280px;
+                        height : 325px;
+                        border : 1px solid $meal;
+                        border-radius : 2px;
+                        background : #fff;
+                        margin : 10px 2px;
+                        padding : 0;
+                        position : relative;
+                        overflow : hidden;
+                        .price {
+                                position : absolute;
+                                top : 0;
+                                left : 39%;
+                                background: #456BF2;
+                                color: #fff;
+                                padding : 2px 10px;
+                        }
+                        .image{
+                                width : 100%;
+                                height : 200px;
+                        }
+                        .slideDesc{
+                                background : none;
+                                position : relative;
+                                z-index : 1;
+                                top : -55px;
+                                -webkit-transition:all 0.5s linear;
+                                -moz-transition:all 0.5s linear;
+                                transition:all 0.5s linear;
+                                .name{
+                                        background-color :rgba(255,255,255,0.75) ;
+                                        text-align : center;
+                                        color:#444;
+                                        font-size : 16px;
+                                        font-weight : normal;
+                                        border-radius : 3px 3px 0 0 ;
+                                        padding: 7px 0;
+                                        margin: 0;
+                                }
+                                .tags{
+                                        background: rgba(255,255,255,0.75);
+                                        text-align : center;
+                                        padding : 0;
+                                        position : relative;
+                                        .tag{
+                                                background : none;
+                                                position: relative;
+                                                z-index : 2;
+                                        }
+                                        .curve{
+                                                width : 103%;
+                                                position : absolute;
+                                                bottom : 0;
+                                                left : 0;
+                                                z-index : 0;
+                                                margin-left : -2%;
+                                        }
+                                }
+                                .description{
+                                        background : #fff;
+                                        margin-top : 0;
+                                        padding: 0 14px;
+                                        font-size: 13px;
+                                        color: #888;
+                                        line-height: 20px;
+                                }
+                        }
+                        .mealFooter {
+                                background : #fff;
+                                margin : 0;
+                                position : absolute;
+                                z-index : 2;
+                                bottom : 0;
+                                left : 0;
+                                width : 100%;
+                                padding: 11px 0 30px 0;
+                                .showMore {
+                                        position : absolute;
+                                        top: -21px;
+                                        right: 25px;
+                                }
+
+                                .addToOrder {
+                                        display: block;
+                                        width: 255px;
+                                        background: #456BF2;
+                                        color: #fff;
+                                        margin: 0 auto;
+                                        border: 1px solid #888;
+                                        padding : 5px 20px;
+                                        font-size: 16px;
+                                }
+                        }
+                }
+        }
+}
+
+//media queries
+@media all and (max-width : 640px){
+        body{
+                .basket{
+                        .initialMessage{
+                                font-size: 14px;
+                        }
+                        .orderSummary{
+                                ul{
+                                        li{
+                                                .order{
+                                                        &.orderQuantity{
+                                                                width : 10% ;
+                                                        }
+                                                        &.orderName{
+                                                                width : 67%;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+
+                }
+                .meals{
+
+                        .meal{
+                                float : left;
+                                margin : 10px;
+                        }
+                }
+        }
+}

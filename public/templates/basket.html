@@ -1,0 +1,43 @@
+<div class="basket">
+        <div class="orderSummary myslide ng-animate-children" data-ng-show="order.confirm">
+                <div class="slideLeft" data-ng-show="order.confirm" data-ng-click="order.confirm = !order.confirm">
+                        <h3>Your order</h3>
+                        <span><i>A Delicious Restaurant</i></span>
+                </div>
+                <span class="summaryTitles" data-ng-show="order.main.length">{{order.main.length}} main<span data-ng-show="order.main.length>1">s</span></span>
+                <ul data-ng-show="order.main.length">
+                        <li data-ng-repeat="meal in order.main">
+                                <div class="order orderQuantity">
+                                        <div class="orderQuantity__addMeal" data-ng-click="addRemoveMeals('main' , {{$index}} , 1)">+</div>
+                                        <div class="orderQuantity__mealCount">{{meal.amount}}</div>
+                                        <div class="orderQuantity__removeMeal" data-ng-click="addRemoveMeals('main' , {{$index}} , -1)">-</div>
+                                </div>
+                                <div class="order orderName">{{meal.name}}</div>
+                                <div class="order orderPrice">&pound; {{meal.price}}</div>
+                        </li>
+                </ul>
+                <span class="summaryTitles" data-ng-show="order.other.length">{{order.other.length}} other<span data-ng-show="order.other.length>1">s</span></span>
+                <ul  data-ng-show="order.other.length">
+                        <li data-ng-repeat="meal in order.other">
+                                <div class="order orderQuantity">
+                                        <div class="orderQuantity__addMeal" data-ng-click="addRemoveMeals('other' , {{$index}} , 1)">+</div>
+                                        <div class="orderQuantity__mealCount">{{meal.amount}}</div>
+                                        <div class="orderQuantity__removeMeal" data-ng-click="addRemoveMeals('other' , {{$index}} , -1)">-</div>
+                                </div>
+                                <div class="order orderName">{{meal.name}}</div>
+                                <div class="order orderPrice">&pound; {{meal.price}}</div>
+                        </li>
+                </ul>
+        </div>
+
+        <div>
+                <span data-ng-show="!order.main.length && !order.other.length" class="initialMessage">It's time to order some delicious food</span>
+                <div class="mealCount confirmOrder" data-ng-show="order.main.length || order.other.length" >
+
+                        <span   data-ng-click="order.confirm = !order.confirm" data-ng-show="order.main.length && !order.confirm" class="count toggleBasket mainCount">{{order.main.length}} main<span data-ng-if="order.main.length>1">s</span></span>
+                        <span  data-ng-click="order.confirm = !order.confirm" data-ng-show="order.other.length && !order.confirm" class="count toggleBasket otherCount">{{order.other.length}} other<span data-ng-if="order.other.length>1">s</span></span>
+                        <span data-ng-show="order.confirm" class="count placeOrder">Confirm Your Order</span>
+                </div>
+                <div   data-ng-click="order.confirm = !order.confirm" class="total toggleBasket " data-ng-show="order.other.length || order.main.length">&pound; {{order.total}}</div>
+        </div>
+</div>
