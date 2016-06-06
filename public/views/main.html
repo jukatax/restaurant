@@ -3,17 +3,17 @@
 
 <ul class="meals"  toggle-description>
     <li class="meal" ng-repeat="meal in menu.meals">
-        <span class="price"><i>&pound; {{meal.price}}</i></span>
-        <img class="image" ng-src="{{meal.primaryImageUrl}}">
+        <span class="price"><i>&pound; {{::meal.price}}</i></span>
+        <img class="image" ng-src="{{::meal.primaryImageUrl}}">
         <div class="slideDesc">
-            <h4 class="name">{{meal.name}}</h4>
+            <h4 class="name">{{::meal.name}}</h4>
             <div class="tags">
                 <span class="tag" data-ng-repeat="tag in meal.tags">
                     <img data-ng-if="!tag.match('course')&&  !tag.match('allergen')" data-ng-src="images/tag--{{tag.match('type')?tag.substring(6):tag.match('diet')?tag.substring(6):tag.match('technique')?tag.substring(10):tag}}.svg" />
                 </span>
                 <img class="curve" src="images/meal-card__curve.svg" />
             </div>
-            <p class="description">{{meal.description.length ? meal.description : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'}}</p>
+            <p class="description">{{::meal.description.length ? meal.description : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'}}</p>
         </div>
         <div class="mealFooter">
             <span class="showMore"><img data-ind='{{$index}}' src="images/expand-button.svg" /></span>
