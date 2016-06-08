@@ -96,11 +96,10 @@ angular.module('restaurant')
         $scope.addRemoveMeals = function(array , indx , amnt){
                 var cookieOrder = $cookies.order;
                 var tmpCookie = '';
-                indx = parseInt(indx);console.log(indx);
                 if(amnt == -1){
                         if(array == 'main'){
-                                if(indx == $scope.order.main.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
-                                $scope.order.main[indx].amount = parseInt($scope.order.main[indx].amount) -1;
+                                //if(indx == $scope.order.main.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
+                                $scope.order.main[indx].amount -= 1;
                                 $scope.order.total = (parseFloat($scope.order.total) - parseFloat($scope.order.main[indx].price)).toFixed(2);
                                 if($scope.order.main[indx].amount==0){
                                         //remove from cookie
@@ -119,8 +118,8 @@ angular.module('restaurant')
                                 }
 
                         }else{
-                                if(indx == $scope.order.other.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
-                                $scope.order.other[indx].amount = parseInt($scope.order.other[indx].amount) -1;
+                                //if(indx == $scope.order.other.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
+                                $scope.order.other[indx].amount -= 1;
                                 $scope.order.total = (parseFloat($scope.order.total) - parseFloat($scope.order.other[indx].price)).toFixed(2);
                                 if($scope.order.other[indx].amount==0){
                                         //remove from cookie
@@ -140,11 +139,11 @@ angular.module('restaurant')
 
                 }else{
                         if(array=='main'){
-                                $scope.order.main[indx].amount = parseInt($scope.order.main[indx].amount) + 1;
+                                $scope.order.main[indx].amount += 1;
                                 $scope.order.total = (parseFloat($scope.order.total) + parseFloat($scope.order.main[indx].price)).toFixed(2);
 
                         }else{
-                                $scope.order.other[indx].amount = parseInt($scope.order.other[indx].amount) + 1;
+                                $scope.order.other[indx].amount += 1;
                                 $scope.order.total = (parseFloat($scope.order.total) + parseFloat($scope.order.other[indx].price)).toFixed(2);
                         }
                 }
