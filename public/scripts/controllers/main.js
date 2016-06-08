@@ -96,10 +96,11 @@ angular.module('restaurant')
         $scope.addRemoveMeals = function(array , indx , amnt){
                 var cookieOrder = $cookies.order;
                 var tmpCookie = '';
+                indx = parseInt(indx);console.log(indx);
                 if(amnt == -1){
                         if(array == 'main'){
                                 if(indx == $scope.order.main.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
-                                $scope.order.main[indx].amount -=1;
+                                $scope.order.main[indx].amount = parseInt($scope.order.main[indx].amount) -1;
                                 $scope.order.total = (parseFloat($scope.order.total) - parseFloat($scope.order.main[indx].price)).toFixed(2);
                                 if($scope.order.main[indx].amount==0){
                                         //remove from cookie
@@ -107,18 +108,19 @@ angular.module('restaurant')
                                         $cookies.order =  tmpCookie;
                                         //remove from array
                                         $scope.order.main.splice(indx , 1);
-
+                                        setTimeout(function(){$scope.$digest();},0);
                                         //hide basket if nothing in order
                                         if($scope.order.main.length==0 && $scope.order.other.length==0){
                                                 $scope.order.confirm = false;
                                                 $cookies.order = '';
+                                                setTimeout(function(){$scope.$digest();},0);
                                         }
 
                                 }
 
                         }else{
                                 if(indx == $scope.order.other.length){indx-=1;console.log('wrong indx sent '+indx+', decreased with 1 now');}
-                                $scope.order.other[indx].amount -=1;
+                                $scope.order.other[indx].amount = parseInt($scope.order.other[indx].amount) -1;
                                 $scope.order.total = (parseFloat($scope.order.total) - parseFloat($scope.order.other[indx].price)).toFixed(2);
                                 if($scope.order.other[indx].amount==0){
                                         //remove from cookie
@@ -126,33 +128,35 @@ angular.module('restaurant')
                                         $cookies.order =  tmpCookie;
                                         //remove from array
                                         $scope.order.other.splice(indx , 1);
-
+                                        setTimeout(function(){$scope.$digest();},0);
                                         //hide basket if nothing in order
                                         if($scope.order.main.length==0 && $scope.order.other.length==0){
                                                 $scope.order.confirm = false;
                                                 $cookies.order = '';
+                                                setTimeout(function(){$scope.$digest();},0);
                                         }
                                 }
                         }
 
                 }else{
                         if(array=='main'){
-                                $scope.order.main[indx].amount +=1;
+                                $scope.order.main[indx].amount = parseInt($scope.order.main[indx].amount) + 1;
                                 $scope.order.total = (parseFloat($scope.order.total) + parseFloat($scope.order.main[indx].price)).toFixed(2);
 
                         }else{
-                                $scope.order.other[indx].amount +=1;
+                                $scope.order.other[indx].amount = parseInt($scope.order.other[indx].amount) + 1;
                                 $scope.order.total = (parseFloat($scope.order.total) + parseFloat($scope.order.other[indx].price)).toFixed(2);
                         }
                 }
+                setTimeout(function(){$scope.$digest();},0);
         };
         /*===========================================*/
         /*===========================================*/
         /*===========================================*/
         MenuService.get().success(function(data) {
                 $scope.menu = data;
-                $scope.menu.meals.forEach(function(val,ind,arr){ arr[ind].amount = 0;}); //add meal count for each meal
-        /*====*/console.log(data);
+                $scope.menu.meals.forEach(function(val,ind,arr){ arr[ind].amount = 0; }); //add meal count for each meal
+                console.log(data);
                 if($cookies.order && !$scope.dataAJAXed){  // add items to basket on reload if cookie exists
                         $scope.dataAJAXed = true;
                         $scope.getOrder();

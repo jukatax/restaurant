@@ -6,7 +6,7 @@
                 </div>
                 <span class="summaryTitles" data-ng-show="order.main.length">{{order.main.length}} main<span data-ng-show="order.main.length>1">s</span></span>
                 <ul data-ng-show="order.main.length">
-                        <li data-ng-repeat="meal in order.main">
+                        <li data-ng-repeat="meal in order.main  track by $index">
                                 <div class="order orderQuantity">
                                         <div class="orderQuantity__addMeal" data-ng-click="addRemoveMeals('main' , {{$index}} , 1)">+</div>
                                         <div class="orderQuantity__mealCount">{{meal.amount}}</div>
@@ -18,7 +18,7 @@
                 </ul>
                 <span class="summaryTitles" data-ng-show="order.other.length">{{order.other.length}} other<span data-ng-show="order.other.length>1">s</span></span>
                 <ul  data-ng-show="order.other.length">
-                        <li data-ng-repeat="meal in order.other">
+                        <li data-ng-repeat="meal in order.other track by $index">
                                 <div class="order orderQuantity">
                                         <div class="orderQuantity__addMeal" data-ng-click="addRemoveMeals('other' , {{$index}} , 1)">+</div>
                                         <div class="orderQuantity__mealCount">{{meal.amount}}</div>
