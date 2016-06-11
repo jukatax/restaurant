@@ -359,6 +359,7 @@ body .meals .meal .mealFooter .showMore {
   position: absolute;
   top: -21px;
   right: 25px;
+  cursor: pointer;
 }
 
 body .meals .meal .mealFooter .addToOrder {

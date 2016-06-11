@@ -183,8 +183,8 @@ angular.module('restaurant')
                                 var trgt = document.querySelectorAll('div.slideDesc');
                                 var descriptions = document.querySelectorAll('div.slideDesc .description');
                                 Object.getOwnPropertyNames(toggleDesc).forEach(function(val,ind,arr) {
-                                        toggleDesc[ind].removeEventListener('click');
-                                        toggleDesc[ind].addEventListener('click', function (e) {
+                                        toggleDesc[ind].removeEventListener('click',function(){});
+                                        toggleDesc[ind].addEventListener('click', function (e) {console.log('desc clicked')
                                                 var indx = parseInt(e.target.attributes.getNamedItem('data-ind').textContent);
                                                 if (trgt[indx].classList) {
                                                         if (trgt[indx].classList.contains('scrollUp')) {
